@@ -1,4 +1,11 @@
 <div class="card">
-    <h2>Titre blog</h2>
-    <p>Blablablablablablablablablablablablablablablablablablablablabla</p>
+    <img [src]="article.image" [alt]="article.title">
+    <h2>{{article.title}}</h2>
+    <h3>{{article.author}}</h3>
+    <p>{{article.content}}</p>
+</div>
+<div class="reviewCard">
+    <input type="text" [(ngModel)]="article.comment">
+    <button (click)="togglePublication()">Publish/Unpublish</button>
+    <p [hidden]="article.isPublished">{{article.comment}}</p>
 </div>
