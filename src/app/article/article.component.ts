@@ -1,14 +1,6 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-
-interface Article {
-  title: string;
-  author: string;
-  content: string;
-  image: string;
-  isPublished: boolean;
-  comment: string;
-};
+import { Article } from '../app.component'
 
 @Component({
   selector: 'app-article',
@@ -24,7 +16,8 @@ export class ArticleComponent {
     content: 'Voici le contenu de l\'article.',
     image: 'https://via.placeholder.com/350x150',
     isPublished: true,
-    comment: ''
+    comment: '',
+    likes: 1000
   };
 
   togglePublication(): void {
