@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Article } from '../app.component'
+import { Article } from '../Model/Article';
 
 @Component({
   selector: 'app-article',
@@ -11,6 +11,7 @@ import { Article } from '../app.component'
 })
 export class ArticleComponent {
   article: Article = {
+    id:4,
     title: 'Titre de l\'article',
     author: 'John Doe',
     content: 'Voici le contenu de l\'article.',

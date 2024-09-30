@@ -1,0 +1,17 @@
+<ul>
+    @for (article of articles; track $index) {
+        @if (article.isPublished) {
+            <a [routerLink]="['/article', article.id]">
+                <li class="card" [ngStyle]="{'border': article.likes >= 150 ? '2px solid red' : 'none'}">
+                    <img [src]="article.image" [alt]="article.title">
+                    <h2 [ngClass]="{'popular-article': article.likes > 100}">{{article.title}}</h2>
+                    <h3>{{article.author}}</h3>
+                    <p>{{article.content}}</p>
+                    <p>{{article.likes}} likes</p>
+                </li>
+            </a>
+        }
+    } @empty {
+        <li>Pas d'article publié en ce moment.</li>
+    }
+</ul>

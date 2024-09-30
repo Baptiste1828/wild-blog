@@ -1,0 +1,22 @@
+ul {
+    display: flex;
+    gap: 15px;
+    padding: 10px;
+
+    .card {
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        border-radius: 5px;
+        padding: 5px;
+        transition: transform 0.5s;
+
+        &:hover {
+            transform: scale(1.05);
+        }
+
+        .popular-article {
+            font-size: 1.5em;
+            text-shadow: 2px 2px 5px gray;
+            font-weight: bold;
+        }
+    }
+}

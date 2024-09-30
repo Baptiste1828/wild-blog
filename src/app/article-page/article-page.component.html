@@ -1,0 +1,12 @@
+@if (article) {
+    <div class="article">
+        <h2>Article {{articleId}}</h2>
+        <h3>{{article.title}}</h3>
+        <img [src]="article.image" [alt]="article.title">
+        <p>{{article.content}}</p>
+        <h4>{{article.likes}} likes</h4>
+        <a [routerLink]="['']">
+            <button>Retour</button>
+        </a>
+    </div>
+}
