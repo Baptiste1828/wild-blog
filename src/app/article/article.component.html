@@ -1,4 +1,4 @@
-<div class="card">
+<!--<div class="card">
     <img [src]="article.image" [alt]="article.title">
     <h2>{{article.title}}</h2>
     <h3>{{article.author}}</h3>
@@ -8,4 +8,14 @@
     <input type="text" [(ngModel)]="article.comment">
     <button (click)="togglePublication()">Publish/Unpublish</button>
     <p [hidden]="article.isPublished">{{article.comment}}</p>
-</div>
+</div>-->
+
+<a [routerLink]="['/article', article.id]">
+    <li class="card" [ngStyle]="{'border': article.likes >= 150 ? '2px solid red' : 'none'}">
+        <img [src]="article.image" [alt]="article.title">
+        <h2 [ngClass]="{'popular-article': article.likes > 100}">{{article.title}}</h2>
+        <h3>{{article.author}}</h3>
+        <p>{{article.content}}</p>
+        <p>{{article.likes}} likes</p>
+    </li>
+</a>
