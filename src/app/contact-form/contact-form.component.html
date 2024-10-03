@@ -1,19 +1,9 @@
 <form #contactForm="ngForm" (ngSubmit)="contactForm.valid && onSubmit()">
-    <div>
-        Le formulaire est-il soumis ? {{contactForm.submitted}}
-    </div>
-    <div>
-        Le formulaire est-il valide ? {{contactForm.valid}}
-    </div>
-    <div>
-        Le formulaire est-il INvalide ? {{contactForm.invalid}}
-    </div>
-
     <fieldset>
         <label for="lastname">Nom</label>
         <input id="lastname" name="lastname" type="text" [(ngModel)]="newMessage.lastname" #lastname="ngModel" required minlength="2" maxlength="15">
         @if (contactForm.submitted && lastname.errors) {
-            <div>
+            <div class="error">
             @if (lastname.errors['required']) {
                 <span>Le nom est requis</span>
             }
@@ -31,7 +21,7 @@
         <label for="firstname">Prénom</label>
         <input id="firstname" name="firstname" type="text" [(ngModel)]="newMessage.firstname" #firstname="ngModel" required minlength="2" maxlength="15">
         @if (contactForm.submitted && firstname.errors) {
-            <div>
+            <div class="error">
                 @if (firstname.errors['required']) {
                     <span>Le prénom est requis</span>
                 }
@@ -49,7 +39,7 @@
         <label for="email">Contact</label>
         <input id="email" name="email" type="email" [(ngModel)]="newMessage.email" #email="ngModel" required email>
         @if (contactForm.submitted && email.errors) {
-            <div>
+            <div class="error">
                 @if (email.errors['required']) {
                     <span>L'email est requis</span>
                 }
@@ -64,7 +54,7 @@
         <label for="content">Contenu du message</label>
         <textarea id="content" name="content" [(ngModel)]="newMessage.content" #content="ngModel" required minlength="20" rows="4" cols="50"></textarea>
         @if (contactForm.submitted && content.errors) {
-            <div>
+            <div class="error">
                 @if (content.errors['required']) {
                     <span>Le contenu du message est requis</span>
                 }
@@ -75,8 +65,10 @@
         }
     </fieldset>
 
-    <button type="reset">Restaurer</button>
-    <button type="submit">Envoyer</button>
+    <div class="buttonsContactForm">
+        <button type="reset">Restaurer</button>
+        <button type="submit">Envoyer</button>
+    </div>
 </form>
 
 <a [routerLink]="['']">

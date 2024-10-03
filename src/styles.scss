@@ -3,5 +3,87 @@
     padding: 0;
     list-style: none;
     text-decoration: none;
-    color: black;
+    color: #fff;
+    border: 0;
+}
+
+body {
+    background: radial-gradient(circle, rgba(163,177,138,1) 2%, rgba(88,129,87,1) 30%, rgba(58,90,64,1) 100%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    form {
+        background-color: rgba(0, 0, 0, 0.356);
+        width: 390px;
+        margin: auto;
+        padding: 50px;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 25px;
+
+        &:hover {
+            transform: scale(1.02);
+            transition: transform 0.5s;
+        }
+
+        label {
+            color: #fff;
+            font-weight: bolder;
+            font-size: 22px;
+        }
+
+        fieldset {
+            display: flex;
+            flex-direction: column;
+
+            input, textarea {
+                font-size: 18px;
+                width: 390px;
+                max-width: 390px;
+                min-width: 390px;
+                height: 33px;
+                min-height: 33px;
+                max-height: 99px;
+                outline: none;
+                color: #fff;
+                font-weight: 500;
+                padding: 5px 0;
+                background: transparent;
+                border-bottom: 2px solid #fff;
+            }
+        }
+    }
+
+    button {
+        display: block;
+        width: fit-content;
+        padding: 10px;
+        margin: 10px;
+        background-color: transparent;
+        color: white;
+        border: 2px solid #fff;
+        cursor: pointer;
+        transition: transform 0.5s;
+        transition: background-color 0.5s;
+        font-weight: bolder;
+
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+}
+
+.error {
+    span {
+        color: red;
+        font-weight: bold;
+        text-wrap: wrap;
+        -webkit-hyphens: auto;
+        hyphens: auto;
+    }
 }
