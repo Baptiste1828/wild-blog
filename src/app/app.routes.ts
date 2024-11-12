@@ -1,14 +1,14 @@
 import { Routes } from '@angular/router';
-import { HomePageComponent } from './home-page/home-page.component';
-import { ArticlePageComponent } from './article-page/article-page.component';
-import { NotFoundComponent } from './not-found/not-found.component';
-import { ContactFormComponent } from './contact-form/contact-form.component';
-import { SignupFormComponent } from './signup-form/signup-form.component';
+import { HomePageComponent } from './pages/home-page/home-page.component';
+import { ArticlePageComponent } from './pages/article-page/article-page.component';
+import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
+import { ContactPageComponent } from './pages/contact-page/contact-page.component';
+import { SignupPageComponent } from './pages/signup-page/signup-page.component';
 
 export const routes: Routes = [
     { path: '', component: HomePageComponent },
     { path: 'article/:id', component: ArticlePageComponent },
-    { path: 'contactForm', component: ContactFormComponent },
-    { path: 'signupForm', component: SignupFormComponent },
-    { path: '**', component: NotFoundComponent }
+    { path: 'contact', component: ContactPageComponent },
+    { path: 'signup', component: SignupPageComponent },
+    { path: '**', component: NotFoundPageComponent }
 ];

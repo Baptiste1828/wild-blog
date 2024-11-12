@@ -1,0 +1,9 @@
+<ul>
+    @for (article of articles; track $index) {
+        @if (article.isPublished) {
+            <app-article-thumbnail [article]="article"></app-article-thumbnail>
+        }
+    } @empty {
+        <li>Pas d'article publié en ce moment.</li>
+    }
+</ul>
