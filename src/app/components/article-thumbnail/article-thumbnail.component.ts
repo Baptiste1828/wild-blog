@@ -1,5 +1,4 @@
-import { Component, Input } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Article } from '../../models/article.model';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
@@ -7,15 +6,15 @@ import { RouterLink } from '@angular/router';
 @Component({
   selector: 'app-article-thumbnail',
   standalone: true,
-  imports: [FormsModule, CommonModule, RouterLink],
+  imports: [CommonModule, RouterLink],
   templateUrl: './article-thumbnail.component.html',
   styleUrl: './article-thumbnail.component.scss'
 })
 export class ArticleThumbnailComponent {
-
   @Input() article!: Article;
+  @Output() notifyLike: EventEmitter<Article> = new EventEmitter<Article>();
 
-  togglePublication(): void {
-    this.article.isPublished = !this.article.isPublished;
+  sendNotification(): void {
+    this.notifyLike.emit(this.article);
   }
 }
