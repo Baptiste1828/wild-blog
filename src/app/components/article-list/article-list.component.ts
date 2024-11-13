@@ -2,8 +2,8 @@ import { Component, inject } from '@angular/core';
 import { Article } from '../../models/article.model';
 import { AsyncPipe, CommonModule } from '@angular/common';
 import { ArticleThumbnailComponent } from '../article-thumbnail/article-thumbnail.component';
-import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { ApiService } from '../../services/api.service';
 
 @Component({
   selector: 'app-article-list',
@@ -15,17 +15,13 @@ import { Observable } from 'rxjs';
 export class ArticleListComponent {
   articles$!: Observable<Article[]>;
 
-  http: HttpClient = inject(HttpClient);
+  apiService: ApiService = inject(ApiService);
 
   ngOnInit() {
-    this.articles$ = this.getArticles();
+    this.articles$ = this.apiService.getArticles();
   }
 
-  handleLike(article: Article) {
+  handleLike(article: Article): void {
     article.isLiked = !article.isLiked;
-  }
-
-  getArticles(): Observable<Article[]> {
-    return this.http.get<Article[]>(`http://localhost:3000/articles`);
   }
 }
